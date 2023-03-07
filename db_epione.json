@@ -1,0 +1,436 @@
+{/* http://localhost:8080/api/v1/hv_datatype */
+"hv_datatype":[
+    { "nameDatatype": "Array Integer", "codeDatatype": 1 },
+    { "nameDatatype": "Array String", "codeDatatype": 2 },
+    { "nameDatatype": "String", "codeDatatype": 3 },
+    { "nameDatatype": "Integer", "codeDatatype": 4 },
+    { "nameDatatype": "Double", "codeDatatype": 5 },
+    { "nameDatatype": "Boolean", "codeDatatype": 6 },
+    { "nameDatatype": "LocalDateTime", "codeDatatype": 7 },
+    { "nameDatatype": "LocalDate", "codeDatatype": 8 },
+    { "nameDatatype": "LocalTime", "codeDatatype": 9 },
+    { "nameDatatype": "Any", "codeDatatype": 10 }
+    ]
+    
+    /* http://localhost:8080/api/v1/hv_form_control/all - JSON para Insertar formulario de control */
+    "hv_form_control":[
+    { "nameFormControl": "Input type textArray", "codeFormControl": 1 },
+    { "nameFormControl": "Select type textArray", "codeFormControl": 2 },
+    { "nameFormControl": "Radio type textArray", "codeFormControl": 3 },
+    { "nameFormControl": "Checkbox type textArray", "codeFormControl": 4 },
+    { "nameFormControl": "Range type textArray", "codeFormControl": 5 },
+    { "nameFormControl": "Any type textArray", "codeFormControl": 6 },
+    { "nameFormControl": "Input type text", "codeFormControl": 7 },
+    { "nameFormControl": "Select type text", "codeFormControl": 8 },
+    { "nameFormControl": "Radio type text", "codeFormControl": 9 },
+    { "nameFormControl": "Checkbox type text", "codeFormControl": 10 },
+    { "nameFormControl": "Range type text", "codeFormControl": 11 },
+    { "nameFormControl": "Any type text", "codeFormControl": 12 },
+    { "nameFormControl": "Input type number", "codeFormControl": 13 },
+    { "nameFormControl": "Select type number", "codeFormControl": 14 },
+    { "nameFormControl": "Radio type number", "codeFormControl": 15 },
+    { "nameFormControl": "Checkbox type number", "codeFormControl": 16 },
+    { "nameFormControl": "Range type number", "codeFormControl": 17 },
+    { "nameFormControl": "Any type number", "codeFormControl": 18 },
+    { "nameFormControl": "Input type double", "codeFormControl": 19 },
+    { "nameFormControl": "Select type double", "codeFormControl": 20 },
+    { "nameFormControl": "Radio type double", "codeFormControl": 21 },
+    { "nameFormControl": "Checkbox type double", "codeFormControl": 22 },
+    { "nameFormControl": "Range type double", "codeFormControl": 23 },
+    { "nameFormControl": "Any type double", "codeFormControl": 24 },
+    { "nameFormControl": "Input type boolean", "codeFormControl": 25 },
+    { "nameFormControl": "Select type boolean", "codeFormControl": 26 },
+    { "nameFormControl": "Radio type boolean", "codeFormControl": 27 },
+    { "nameFormControl": "Checkbox type boolean", "codeFormControl": 28 },
+    { "nameFormControl": "Range type boolean", "codeFormControl": 29 },
+    { "nameFormControl": "Any type boolean", "codeFormControl": 30 },
+    { "nameFormControl": "Input type localDateTime", "codeFormControl": 31 },
+    { "nameFormControl": "Select type localDateTime", "codeFormControl": 32 },
+    { "nameFormControl": "Radio type localDateTime", "codeFormControl": 33 },
+    { "nameFormControl": "Checkbox type localDateTime", "codeFormControl": 34 },
+    { "nameFormControl": "Range type localDateTime", "codeFormControl": 35 },
+    { "nameFormControl": "Any type localDateTime", "codeFormControl": 36 },
+    { "nameFormControl": "Input type localDate", "codeFormControl": 37 },
+    { "nameFormControl": "Select type localDate", "codeFormControl": 38 },
+    { "nameFormControl": "Radio type localDate", "codeFormControl": 39 },
+    { "nameFormControl": "Checkbox type localDate", "codeFormControl": 40 },
+    { "nameFormControl": "Range type localDate", "codeFormControl": 41 },
+    { "nameFormControl": "Any type localDate", "codeFormControl": 42 },
+    { "nameFormControl": "Input type localTime", "codeFormControl": 43 },
+    { "nameFormControl": "Select type localTime", "codeFormControl": 44 },
+    { "nameFormControl": "Radio type localTime", "codeFormControl": 45 },
+    { "nameFormControl": "Checkbox type localTime", "codeFormControl": 46 },
+    { "nameFormControl": "Range type localTime", "codeFormControl": 47 },
+    { "nameFormControl": "Any type localTime", "codeFormControl": 48 }
+    ]
+    
+    /* ======================= EJEMPLO ESTRUCTURA FORMULARIO ========================== */
+    
+    /* http://localhost:8080/api/v1/hv_card_type - JSON para Insertar tipo de ficha */
+    { "idCardType": 1, "nameCardType": "Visita domiciliaria" }
+    
+    /* http://localhost:8080/api/v1/hv_card - JSON para Insertar nueva ficha */
+    { "idCardType": 1, "nameCard": "Visita Cero" }
+    
+    /* http://localhost:8080/api/v1/hv_module - JSON para Insertar Modulos */
+    { "nameModule": "Default", "typeModule": 0, "dateCreatedModule": "2023-03-03T00:00:00" , "orderPosModule": 0 }
+    
+    /* Actualización del por defecto, Será un nuevo modulo */
+    { "nameModule": "Datos personales", "typeModule": 0, "dateCreatedModule": "2023-03-03T00:00:00" , "orderPosModule": 1 }
+    
+    /* Otro: Creado o seleccionado */
+    { "nameModule": "Preguntas sobre diabetes  Mellitus u otra alteración de la glucosa", "typeModule": 1, "dateCreatedModule": "2023-03-03T00:00:00" , "orderPosModule": 2 }
+    
+    
+    /* TABLA INTERMEDIA card_module - Insertar con el update de hv_card: id 1*/
+    { "modules": [ { "idModule": 1 }, { "idModule": 2 } ] }
+    
+    
+    /* http://localhost:8080/api/v1/hv_submodule - Crear nuevo submodulo */
+    /* Paso 1 */
+    { "nameSubmodule": "Default","descriptionSubmodule": "Default","orderPosSubmodule": 0,"stateSubmodule": true,"levelSubmodule": 0 }
+    /* Paso 2 de actualización (buscar id anterior) */
+    { "nameSubmodule": "Datos personales","descriptionSubmodule": "Datos personales del paciente","orderPosSubmodule": 0,"stateSubmodule": true,"levelSubmodule": 0 }
+    
+    /* Paso 1 */
+    { "nameSubmodule": "Datos Contacto","descriptionSubmodule": "Datos de contacto del paciente","orderPosSubmodule": 1,"stateSubmodule": true,"levelSubmodule": 1 }
+    
+    /* Paso 1 */
+    { "nameSubmodule": "Preguntas de diabetes","descriptionSubmodule": "Preguntas de diabetes","orderPosSubmodule": 0,"stateSubmodule": true,"levelSubmodule": 1 }
+    
+    
+    /* TABLA INTERMEDIA  - Insertar con el update de hv_module: id 1 y 2*/
+    /* http://localhost:8080/api/v1/hv_module */
+    {
+        "submodules": [
+            { "idSubmodule": 1 },
+            { "idSubmodule": 2 }
+        ]
+    }
+    /* hv_module/2 */
+    {    "submodules": [
+            { "idSubmodule": 3 }
+        ]
+    }
+    
+    
+    /* http://localhost:8080/api/v1/hv_domain -  JSON para Insertar un dominio*/
+    /* para modulo por defecto - datos personales */
+    { "idSubmodule": 1, "idFormControl": 7, "nameDomain": "Nombre", "orderPosDomain": 1, "descriptionDomain": "Nombre del paciente", "requiredDomain": true }
+    { "idSubmodule": 1, "idFormControl": 7, "nameDomain": "Apellidos", "orderPosDomain": 2, "descriptionDomain": "Apellidos del paciente", "requiredDomain": true }
+    { "idSubmodule": 1, "idFormControl": 37, "nameDomain": "Fecha de nacimiento", "orderPosDomain": 3, "descriptionDomain": "Fecha de nacimiento del paciente", "requiredDomain": true }
+    { "idSubmodule": 1, "idFormControl": 8, "nameDomain": "Sexo", "orderPosDomain": 4, "descriptionDomain": "Sexo del paciente", "requiredDomain": true }
+    
+    /* para submodulo - datos de contacto */
+    { "idSubmodule": 2, "idFormControl": 13, "nameDomain": "Telefono", "orderPosDomain": 1, "descriptionDomain": "Numero de telefono del paciente", "requiredDomain": true }
+    { "idSubmodule": 2, "idFormControl": 13, "nameDomain": "Celular", "orderPosDomain": 2, "descriptionDomain": "Numero de celular del paciente", "requiredDomain": true }
+    { "idSubmodule": 2, "idFormControl": 13, "nameDomain": "Correo electronico", "orderPosDomain": 3, "descriptionDomain": "Correo electronico del paciente", "requiredDomain": true }
+    
+    /* para modulo preguntas de diabetes */
+    
+    { "idSubmodule": 3, "idFormControl": 15, "nameDomain": "¿Realiza diariamente al menos 30 minutos de actividad física, en el trabajo y/o en el tiempo libre?", "orderPosDomain": 1, "descriptionDomain": "", "requiredDomain": true }
+    
+    { "idSubmodule": 3, "idFormControl": 15, "nameDomain": "¿Con qué frecuencia come verduras o frutas?", "orderPosDomain": 1, "descriptionDomain": "", "requiredDomain": true }
+    
+    
+    /* TABLA INTERMEDIA - insertar en el update de hv_module */
+    /* hv_module/1 */
+    {
+        "domains": [
+            { "idDomain": 1 },
+            { "idDomain": 2 },
+            { "idDomain": 3 },
+            { "idDomain": 4 },
+            { "idDomain": 5 },
+            { "idDomain": 6 },
+            { "idDomain": 7 }
+        ]
+    }
+    /* hv_module/2 */
+    {
+        "domains": [
+            { "idDomain": 8 },
+            { "idDomain": 9 }
+        ] 
+    }
+    
+    /* http://localhost:8080/api/v1/hv_field - JSON para Insertar un campo */
+    /* fiels de modulo datos personales */
+    { "idDatatype": 3,"nameField": "input_text","orderPosField": 1 }
+    { "idDatatype": 3,"nameField": "input_text","orderPosField": 2 }
+    { "idDatatype": 8,"nameField": "input_date","orderPosField": 3 }
+    { "idDatatype": 6,"nameField": "Masculino","orderPosField": 1 }
+    { "idDatatype": 6,"nameField": "Femenino","orderPosField": 2 }
+    /* fiels de submodulo datos de contacto */
+    { "idDatatype": 4,"nameField": "input_phone","orderPosField": 1 }
+    { "idDatatype": 4,"nameField": "input_phone","orderPosField": 2 }
+    { "idDatatype": 3,"nameField": "input_email","orderPosField": 3 }
+    
+    /* fiels de modulo diabetes */
+    { "idDatatype": 4, "nameField": "Responde que si a la pregunta", "orderPosField": 1 }
+    { "idDatatype": 4, "nameField": "Responde que no a la pregunta", "orderPosField": 2 }
+    { "idDatatype": 4, "nameField": "Responde Todos los días", "orderPosField": 1 }
+    { "idDatatype": 4, "nameField": "Responde No todos los días", "orderPosField": 2 }
+    
+    /* (16, 6, 'multiple', 'Todos los días', '==');
+    (17, 6, 'multiple', 'No todos los días', '=='); */
+    
+    /* TABLA INTERMEDIA - insertar en el update de hv_domain */
+    /* hv_domain/1 */
+    { "fields": [ { "idField": 1 } ] }
+    /* hv_domain/2 */
+    { "fields": [ { "idField": 2 } ] }
+    /* hv_domain/3 */
+    { "fields": [ { "idField": 3 } ] }
+    /* hv_domain/4 */
+    { "fields": [ { "idField": 4 }, { "idField": 5 } ] }
+    
+    /* hv_domain/5 */
+    { "fields": [ { "idField": 6 } ] }
+    /* hv_domain/6 */
+    { "fields": [ { "idField": 7 } ] }
+    /* hv_domain/7 */
+    { "fields": [ { "idField": 8 } ] }
+    
+    
+    /* hv_domain/8 */
+    { "fields": [ { "idField": 9 }, { "idField": 10 } ] }
+    /* hv_domain/9 */
+    { "fields": [ { "idField": 11 }, { "idField": 12 } ] }
+    
+    
+    /* http://localhost:8080/api/v1/hv_cohort - JSON para Insertar cohortes */
+    /* Paso 1 */
+    { "nameCohorte": "corte 1 2023", "startDate": "2023-03-01T00:00:00", "endDate": "2023-05-01T00:00:00" }
+    
+    
+    /* ======================= EJEMPLO REGISTROS ========================== */
+    
+    /* http://localhost:8080/api/v1/hv_state_visit - JSON para Insertar un estado de visita domiciliaria */
+    { "nameStateVisit": "Realizada", "codeStateVisit": 1 }
+    
+    
+    /* http://localhost:8080/api/v1/hv_card_val - JSON para Insertar un registro de ficha */
+    { "idCohort" : 1, "idCard" : 1, "idStateVisit" : 1, "nameCardVal" : "Formulario 1", "stateCardVal" : 0, "dateCreatedCardVal" : "2023-03-03T00:00:00" }
+    
+    
+    /* http://localhost:8080/api/v1/hv_module_val - JSON para Insertar un registro de un modulo */
+    /* Paso 1 */
+    { "idModule": 1, "stateModuleVal": 1 }
+    { "idModule": 2, "stateModuleVal": 1 }
+    
+    
+    /* TABLA INTERMEDIA - insertar en el update de hv_card_val */
+    /* hv_card_val/1 */
+    { "modulesVal": [ { "idModuleVal": 1 }, { "idModuleVal": 2 } ] }
+    
+    
+    /* http://localhost:8080/api/v1/hv_domain_val - JSON para Insertar un registro de un dominio val */
+    { "idDomain": 1, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 2, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 3, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 4, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    
+    { "idDomain": 5, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 6, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 7, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    
+    { "idDomain": 8, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    { "idDomain": 9, "idCohort": 1, "stateDomainVal": 1, "dateCreatedDomainVal": "2023-03-03T00:00:00" }
+    
+    
+    /* TABLA INTERMEDIA - insertar en el update de hv_module_val */
+    /* hv_module_val/1 */
+    {
+        "domainsVal": [
+            { "idDomainVal": 1 },
+            { "idDomainVal": 2 },
+            { "idDomainVal": 3 },
+            { "idDomainVal": 4 },
+            { "idDomainVal": 5 },
+            { "idDomainVal": 6 },
+            { "idDomainVal": 7 }
+        ]
+    }
+    /* hv_module_val/2 */
+    {
+        "domainsVal": [
+            { "idDomainVal": 8 },
+            { "idDomainVal": 9 }
+        ] 
+    }
+    
+    /* http://localhost:8080/api/v1/hv_field - JSON para Insertar un campo */
+    { "idDatatype": 4, "nameField": "Responde que si a la pregunta", "orderPosField": 1 }
+    { "idDatatype": 4, "nameField": "Responde que no a la pregunta", "orderPosField": 2 }
+    { "idDatatype": 4, "nameField": "Responde Todos los días", "orderPosField": 1 }
+    { "idDatatype": 4, "nameField": "Responde No todos los días", "orderPosField": 2 }
+    
+    /* http://localhost:8080/api/v1/hv_field_val - JSON para Insertar un registro de un campo */
+    /* fiels de modulo datos personales */
+    { "idField": 1,"textValue": "Pepito","dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idField": 2,"textValue": "Perez","dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idField": 3,"dateValue": "2013-03-03","dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idField": 4, "integerValue": 1,"dateCreatedFieldVal": "2023-03-03T00:00:00" } //sexo idField 4 = Masculino
+    /* fiels de submodulo datos de contacto */
+    { "idField": 6,"integerValue": 88888,"dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idField": 7,"integerValue": 12345678,"dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idField": 8,"textValue": "pepito@mail.com","dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    
+    /* fiels de modulo diabetes */
+    { "idField": 9, "integerValue": 1,"dateCreatedFieldVal": "2023-03-03T00:00:00" } // responde que si
+    { "idField": 12,"integerValue": 0,"dateCreatedFieldVal": "2023-03-03T00:00:00" } // responde que no
+    
+    /* TABLA INTERMEDIA - insertar en el update de hv_domain_val */
+    /* hv_domain_val/1 */
+    { "fieldsVal": [ { "idFieldVal": 1 } ] }
+    /* hv_domain_val/2 */
+    { "fieldsVal": [ { "idFieldVal": 2 } ] }
+    /* hv_domain_val/3 */
+    { "fieldsVal": [ { "idFieldVal": 3 } ] }
+    /* hv_domain_val/4 */
+    { "fieldsVal": [ { "idFieldVal": 4 } ] } //Masculino
+    
+    /* hv_domain_val/5 */
+    { "fieldsVal": [ { "idFieldVal": 5 } ] }
+    /* hv_domain_val/6 */
+    { "fieldsVal": [ { "idFieldVal": 6 } ] }
+    /* hv_domain_val/7 */
+    { "fieldsVal": [ { "idFieldVal": 7 } ] }
+    
+    /* hv_domain_val/8 */
+    { "fieldsVal": [ { "idFieldVal": 8 } ] } //si
+    /* hv_domain_val/9 */
+    { "fieldsVal": [ { "idFieldVal": 9 } ] } //no
+    
+    
+    /* http://localhost:8080/api/v1/hv_patient - JSON para Insertar un paciente */
+    { "namePatient": "Pepito Perez" }
+    
+    /* TABLA INTERMEDIA - insertar card_val con el update de paciente */
+    /* hv_patient/1 */
+    { "cardsVal": [ { "idCardVal": 1 } ] }
+    
+    
+    /*==============================================================*/
+    /*                            RISK                              */
+    /*==============================================================*/
+    /* http://localhost:8080/api/v1/hv_risk/all - JSON para Insertar riesgos */
+    [
+    { "nameRisk": "Riesgo de diabetes mellitus u otras anormalidades de la regulación de la glucosa","scoreRisk": 26.0,"flagRisk": null },
+    { "nameRisk": "Riesgo de CÁNCER, TB, DISFUNCIÓN AUDITIVA","scoreRisk": 1.0,"flagRisk": null },
+    { "nameRisk": "Riesgo de Tuberculosis","scoreRisk": 1.0,"flagRisk": null },
+    { "nameRisk": "Aro por edad materna","scoreRisk": 3.0,"flagRisk": null },
+    { "nameRisk": "Aro por edad materna","scoreRisk": 3.0,"flagRisk": null },
+    { "nameRisk": "Aro por RH materno","scoreRisk": 2.0,"flagRisk": null },
+    { "nameRisk": "Aro por habitos","scoreRisk": 3.0,"flagRisk": null },
+    { "nameRisk": "Aro por habitos","scoreRisk": 2.0,"flagRisk": null },
+    { "nameRisk": "Aro por habitos","scoreRisk": 2.0,"flagRisk": null },
+    { "nameRisk": "Aro por antecedentes familiares","scoreRisk": 11.0,"flagRisk": null },
+    { "nameRisk": "Aro por antecedentes personales","scoreRisk": 11.0,"flagRisk": null },
+    { "nameRisk": "Aro por signos y sintomas","scoreRisk": 10.0,"flagRisk": null },
+    { "nameRisk": "Aro por antecedentes","scoreRisk": 9.0,"flagRisk": null },
+    { "nameRisk": "Riesgo nutricional y cardiovascular","scoreRisk": 10.0,"flagRisk": null },
+    { "nameRisk": "Riesgo nutricional","scoreRisk": 6.0,"flagRisk": null },
+    { "nameRisk": "Riesgo EPOC","scoreRisk": 11.0,"flagRisk": null },
+    { "nameRisk": "Riesgo de HTA","scoreRisk": 2.0,"flagRisk": null }
+    ]
+    
+    /* http://localhost:8080/api/v1/hv_category_risk/all - JSON para Insertar categorias de riesgos */
+    [
+    { "idRisk": 1,"nameCategoryRisk": "BAJO RIESGO 1:100 para desarrollar Diabetes  Mellitus u otra alteración de la glucosa","rangeCategoryRisk": "1-6","recommendations": "Recomendar cambios en hábitos y estilos de vida saludable; Realizar tamizaje en tres años" },
+    { "idRisk": 1,"nameCategoryRisk": "LIGERAMENTE ELEVADO 1:26 para desarrollar Diabetes Mellitus u otra alteración de la glucosa","rangeCategoryRisk": "7-11","recommendations": "Educación sobre hábitos de vida saludable; Alimentación y actividad f├¡sica; Realizar tamizaje en tres años" },
+    { "idRisk": 1,"nameCategoryRisk": "MODERADO 1:6 para desarrollar Diabetes Mellitus u otra alteración de la glucosa","rangeCategoryRisk": "12-14","recommendations": "Orientar para que asista a una consulta medica general para realizar la confirmación del diagnóstico de Diabetes Mellitus" },
+    { "idRisk": 1,"nameCategoryRisk": "ALTO 1:3 para desarrollar Diabetes Mellitus u otra alteración de la glucosa","rangeCategoryRisk": "15-20","recommendations": "Orientar para que asista a una consulta medica general para realizar la confirmación del diagnóstico de Diabetes Mellitus" },
+    { "idRisk": 1,"nameCategoryRisk": "MUY ALTO 1:2 para desarrollar Diabetes Mellitus u otra alteración de la glucosa","rangeCategoryRisk": "21-26","recommendations": "Orientar para que asista a una consulta medica general para realizar la confirmación del diagnóstico de Diabetes Mellitus" },
+    { "idRisk": 2,"nameCategoryRisk": "RIESGO ALTO","rangeCategoryRisk": "1-1","recommendations": "Sin recomendación" },
+    { "idRisk": 3,"nameCategoryRisk": "Sintomático respiratorio","rangeCategoryRisk": "1-1","recommendations": "Asistir a IPS primaria para toma de basiloscopia" },
+    { "idRisk": 4,"nameCategoryRisk": "Gestante añosa","rangeCategoryRisk": "3-3","recommendations": "Reportar IPS Primaria y/o EAPB" },
+    { "idRisk": 5,"nameCategoryRisk": "Embarazo en adolescente","rangeCategoryRisk": "3-3","recommendations": "Reportar IPS Primaria y/o EAPB" },
+    { "idRisk": 6,"nameCategoryRisk": "Riesgo de isoinmunizacion","rangeCategoryRisk": "2-2","recommendations": "Reportar IPS Primaria y/o EAPB" },
+    { "idRisk": 7,"nameCategoryRisk": "Gestante con riesgo nutricional","rangeCategoryRisk": "3-3","recommendations": "Valoración y educación por nutrición HORISOES" },
+    { "idRisk": 8,"nameCategoryRisk": "Gestante con riesgo de salud mental","rangeCategoryRisk": "2-2","recommendations": "Notificación EAPB - valoración psiquiatr├¡a" },
+    { "idRisk": 9,"nameCategoryRisk": "Gestante riesgo salud materno fetal","rangeCategoryRisk": "2-3","recommendations": "Notificación EAPB" },
+    { "idRisk": 10,"nameCategoryRisk": "Gestante aro por antecedentes familiares","rangeCategoryRisk": "2-11","recommendations": "Reportar IPS primaria y/o EAPB" },
+    { "idRisk": 11,"nameCategoryRisk": "Gestante aro por antecedentes personales","rangeCategoryRisk": "2-12","recommendations": "Reportar IPS primaria y/o EAPB" },
+    { "idRisk": 12,"nameCategoryRisk": "Gestante aro por signos y sintomas","rangeCategoryRisk": "2-3","recommendations": "Asistir de inmediato a IPS primaria - reporte EAPB" },
+    { "idRisk": 13,"nameCategoryRisk": "Gestante aro por antecedentes","rangeCategoryRisk": "2-9","recommendations": "Asistir de inmediato a IPS primaria - reporte EAPB" },
+    { "idRisk": 14,"nameCategoryRisk": "Obesidad abdominal","rangeCategoryRisk": "1-1","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 14,"nameCategoryRisk": "Riesgo cardiovascular","rangeCategoryRisk": "2-2","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 15,"nameCategoryRisk": "Delgadez","rangeCategoryRisk": "1-1","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 15,"nameCategoryRisk": "Normalidad","rangeCategoryRisk": "2-2","recommendations": "No aplica a este riesgo" },
+    { "idRisk": 15,"nameCategoryRisk": "Sobrepeso","rangeCategoryRisk": "3-3","recommendations": "Recomendaciones nutricionales y hábitos saludables" },
+    { "idRisk": 15,"nameCategoryRisk": "Obesidad grado I","rangeCategoryRisk": "4-4","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 15,"nameCategoryRisk": "Obesidad grado II","rangeCategoryRisk": "5-5","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 15,"nameCategoryRisk": "Obesidad grado III","rangeCategoryRisk": "6-6","recommendations": "Consulta de medicina general para interconsulta con nutrición" },
+    { "idRisk": 16,"nameCategoryRisk": "Riesgo alto de HTA","rangeCategoryRisk": "2-2","recommendations": "Asistir a consulta de medicina general - informe a HORISOES" },
+    { "idRisk": 17,"nameCategoryRisk": "Factor de riesgo para EPOC","rangeCategoryRisk": "1-3","recommendations": "Reportar IPS primaria y/o EAPB" },
+    { "idRisk": 17,"nameCategoryRisk": "Riesgo alto de EPOC","rangeCategoryRisk": "4-6","recommendations": "Reportar IPS primaria y/o EAPB" },
+    { "idRisk": 17,"nameCategoryRisk": "Riesgo muy alto de EPOC","rangeCategoryRisk": "7-11","recommendations": "Reportar IPS primaria y/o EAPB" }
+    ]
+    
+    /* http://localhost:8080/api/v1/hv_question_risk - JSON para Insertar una pregunta */
+    /* Paso 1 - (buscar id del dominio a relacionar)*/
+    { "idDomain": 3, "idRisk": 1, "descriptQuestionRisk": "Actividad física" }
+    { "idDomain": 3, "idRisk": 1, "descriptQuestionRisk": "Consumo de frutas y verduras" }
+    
+    /* http://localhost:8080/api/v1/hv_field_val - JSON para Insertar una valor de una condición */
+    { "integerValue": 0, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "integerValue": 0, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    
+    /* http://localhost:8080/api/v1/hv_condition - JSON para Insertar las condiones y sus parametros */
+    { "idFieldVal": 10,"nameCondition": "No realiza actividad física","logicalOperator": "==","comparisonOperator": "","action": "sum","score_condition": 2 }
+    { "idFieldVal": 11,"nameCondition": "No todos los días","logicalOperator": "==","comparisonOperator": "","action": "sum","score_condition": 1 }
+    
+    
+    /* http://localhost:8080/api/v1/hv_question_risk/ {id_question_risk} 1 */
+    { "conditions": [ { "idCondition": 1 } ] }
+    /* http://localhost:8080/api/v1/hv_question_risk/ {id_question_risk} 2 */
+    { "conditions": [ { "idCondition": 2 } ] }
+    
+    /* finish */
+    
+    
+    
+    
+    
+    /* http://localhost:8080/api/v1/hv_field_val - JSON para Insertar un registro de un campo */
+    /* Paso 1 */
+    { "idFieldVal":13, "integerValue": 540, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":14, "arrayIntValue": {540, 648}, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":15, "arrayIntValue": {648, 768}, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":16, "integerValue": 768, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":17, "textValue": "M", "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":18, "arrayIntValue": {0, 94}, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":19, "integerValue": 94, "dateCreatedFieldVal": "2023-03-03T00:00:00"
+    { "idFieldVal":20, "textValue": "F", "dateCreatedFieldVal": "2023-03-03T00:00:00" } }
+    { "idFieldVal":21, "arrayIntValue": {0, 90}, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    { "idFieldVal":22, "integerValue": 90, "dateCreatedFieldVal": "2023-03-03T00:00:00" }
+    
+    
+    
+    /* http://localhost:8080/api/v1/hv_condition - JSON para Insertar condición */
+    /* Paso 1 - (buscar id del valor anterior)*/
+    { "idFieldVal": 13, "nameCondition": "Menor de 45 años","logicalOperator": "<","comparisonOperator": "","action": "","scoreHvpr": 0 }
+    { "idFieldVal": 14, "nameCondition": "Entre 45 y 54 años","logicalOperator": "[)","comparisonOperator": "","action": "","scoreHvpr": 2 }
+    { "idFieldVal": 15, "nameCondition": "Entre 54 y 64 años","logicalOperator": "[)","comparisonOperator": "","action": "","scoreHvpr": 3 }
+    { "idFieldVal": 16, "nameCondition": "mayor a 64 años","logicalOperator": ">=","comparisonOperator": "","action": "","scoreHvpr": 4 }
+    { "idFieldVal": 17, "nameCondition": "Masculino","logicalOperator": "==","comparisonOperator": "Y","action": "","scoreHvpr": 0 }
+    { "idFieldVal": 18, "nameCondition": "Menor de 94 cm","logicalOperator": "()","comparisonOperator": "Y","action": "","scoreHvpr": 0 }
+    { "idFieldVal": 19, "nameCondition": "Mayor e igual a 94 cm","logicalOperator": ">=","comparisonOperator": "Y","action": "","scoreHvpr": 4 }
+    { "idFieldVal": 20, "nameCondition": "Femenino","logicalOperator": "==","comparisonOperator": "Y","action": "","scoreHvpr": 0 }
+    { "idFieldVal": 21, "nameCondition": "Menor de 90 cm","logicalOperator": "()","comparisonOperator": "Y","action": "","scoreHvpr": 0 }
+    { "idFieldVal": 22, "nameCondition": "Mayor e igual a 90 cm","logicalOperator": ">=","comparisonOperator": "Y","action": "","scoreHvpr": 4 }
+    
+    /* TABLA INTERMEDIA */
+    { "idQuestionRisk": 1, "idCondition": 1 }
+    { "idQuestionRisk": 1, "idCondition": 2 }
+    { "idQuestionRisk": 1, "idCondition": 3 }
+    { "idQuestionRisk": 1, "idCondition": 4 }
+    { "idQuestionRisk": 2, "idCondition": 5 }
+    { "idQuestionRisk": 2, "idCondition": 6 }
+    { "idQuestionRisk": 2, "idCondition": 7 }
+    { "idQuestionRisk": 2, "idCondition": 8 }
+    { "idQuestionRisk": 2, "idCondition": 9 }
+    { "idQuestionRisk": 2, "idCondition": 10 }
+    }
