@@ -1,5 +1,5 @@
 {
-    // http://localhost:8080/api/v1/hv_datatype
+    
     "hv_datatype":[
     { "nameDatatype": "Array Integer", "codeDatatype": 1 },
     { "nameDatatype": "Array String", "codeDatatype": 2 },
@@ -13,7 +13,7 @@
     { "nameDatatype": "Any", "codeDatatype": 10 }
     ],
     
-    // http://localhost:8080/api/v1/hv_form_control/all - JSON para Insertar formulario de control 
+    
     "hv_form_control":[
     { "nameFormControl": "Input type textArray", "codeFormControl": 1 },
     { "nameFormControl": "Select type textArray", "codeFormControl": 2 },
